@@ -11,6 +11,7 @@ export default function Home() {
       sector: 'Transporte',
       icon: '🚌',
       image: '/metro-opt.jpg',
+      video: '/metro-demo-opt.mp4',
       url: 'https://metrosantiago.eldojofgc.cl/cambioderuedas/',
       hotspots: [
         {
@@ -43,6 +44,7 @@ export default function Home() {
       sector: 'Manufactura',
       icon: '🏭',
       image: '/iansa-opt.jpg',
+      video: '/iansa-demo-opt.mp4',
       url: 'https://iansa.eldojofgc.cl/Tour/',
       hotspots: [
         {
@@ -75,6 +77,7 @@ export default function Home() {
       sector: 'Forestal',
       icon: '🌲',
       image: '/arauco-opt.jpg',
+      video: '/arauco-demo-opt.mp4',
       url: 'https://arauco.eldojofgc.cl/Rutaforestal/',
       hotspots: [
         {
@@ -106,7 +109,8 @@ export default function Home() {
       description: 'Entrena en el uso seguro de maquinaria pesada industrial',
       sector: 'Alimentos',
       icon: '🐟',
-      image: '/arauco-opt.jpg', // placeholder, podría ser otra imagen
+      image: '/aquachile-opt.jpg',
+      video: '/aquachile-demo-opt.mp4',
       url: 'https://aquachile.eldojofgc.cl/fileteadorabeader200/',
       hotspots: [
         {
@@ -131,6 +135,65 @@ export default function Home() {
           type: 'info',
         },
       ],
+    },
+  ]
+
+  const vrCourses = [
+    {
+      title: 'Extinción de Incendios con VR',
+      description: 'Simulaciones inmersivas para identificar y responder efectivamente a situaciones de incendio',
+      objectives: [
+        'Tipos de fuego y clasificación',
+        'Uso correcto de extintores',
+        'Procedimientos de evacuación',
+        'Simulaciones en diferentes escenarios',
+      ],
+      duration: '2 horas',
+      icon: '🔥',
+    },
+    {
+      title: 'Mapeos Virtuales para Maquinaria',
+      description: 'Entornos virtuales realistas para capacitación en maquinaria especializada',
+      objectives: [
+        'Mapeos 3D de maquinaria compleja',
+        'Simulaciones inmersivas seguras',
+        'Personalización según equipos',
+      ],
+      duration: '1 hora',
+      icon: '⚙️',
+    },
+    {
+      title: 'Mapeos Virtuales para Rutas Críticas',
+      description: 'Mapeos detallados de rutas críticas en instalaciones industriales',
+      objectives: [
+        'Modelado virtual de entornos críticos',
+        'Simulación de riesgos y prevención',
+        'Optimización de rutas seguras',
+      ],
+      duration: '1 hora',
+      icon: '🛤️',
+    },
+    {
+      title: 'Mapeos Virtuales para Rutas de Escape',
+      description: 'Simulaciones de evacuación para familiarizar con procedimientos de emergencia',
+      objectives: [
+        'Mapeo 3D de rutas de evacuación',
+        'Simulaciones de incendios y emergencias',
+        'Capacitación en procedimientos de escape',
+      ],
+      duration: '1 hora',
+      icon: '🚪',
+    },
+    {
+      title: 'Inducción Nuevo Personal en VR',
+      description: 'Entornos virtuales personalizados para inducción inmersiva de nuevos colaboradores',
+      objectives: [
+        'Modelado de entornos laborales específicos',
+        'Simulación de protocolos de seguridad',
+        'Experiencia inmersiva para nuevos colaboradores',
+      ],
+      duration: '1 hora',
+      icon: '👤',
     },
   ]
 
@@ -184,6 +247,9 @@ export default function Home() {
           <nav className="hidden md:flex gap-8">
             <a href="#ejemplos" className="text-otec-dark hover:text-otec-orange transition">
               Ejemplos
+            </a>
+            <a href="#cursos" className="text-otec-dark hover:text-otec-orange transition">
+              Cursos VR
             </a>
             <a href="#beneficios" className="text-otec-dark hover:text-otec-orange transition">
               Beneficios
@@ -239,13 +305,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ejemplos Vivos - Tours 360° con Hotspots */}
+      {/* Ejemplos Vivos - Tours 360° con Videos Demo */}
       <section id="ejemplos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">Experimenta Mapeos 360°</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explora tours interactivos con puntos de seguridad marcados. Haz clic en los números para descubrir información crítica sin revelar contenido confidencial.
+              🔴 <strong>Demos de 30 segundos</strong> que muestran el concepto sin revelar contenido confidencial. 
+              Los tours 360° completos están disponibles solo bajo solicitud formal para proteger la privacidad de nuestros clientes.
             </p>
           </div>
 
@@ -276,8 +343,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cursos VR */}
+      <section id="cursos" className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-otec-dark mb-4">Soluciones VR & Realidad Aumentada</h2>
+            <p className="text-xl text-gray-600">
+              Cursos especializados en realidad virtual para capacitación inmersiva
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {vrCourses.map((course, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition border-t-4 border-otec-orange"
+              >
+                <div className="text-6xl mb-4">{course.icon}</div>
+                <h3 className="text-xl font-bold text-otec-dark mb-2">{course.title}</h3>
+                <p className="text-sm text-gray-600 mb-4 font-semibold">⏱️ {course.duration}</p>
+                <p className="text-gray-700 mb-4">{course.description}</p>
+                
+                <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                  <p className="text-xs font-bold text-otec-dark mb-2">OBJETIVOS:</p>
+                  <ul className="text-xs text-gray-700 space-y-1">
+                    {course.objectives.map((obj, objIdx) => (
+                      <li key={objIdx}>✓ {obj}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href="mailto:comercialotec@otecachsservicios.cl"
+                  className="text-otec-blue hover:text-otec-orange font-bold text-sm"
+                >
+                  Solicitar información →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Beneficios */}
-      <section id="beneficios" className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
+      <section id="beneficios" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">¿Por qué elegir Mapeos 360°?</h2>
@@ -290,7 +399,7 @@ export default function Home() {
             {benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition"
+                className="bg-otec-light p-8 rounded-xl shadow-md hover:shadow-lg transition"
               >
                 <div className="text-5xl mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-bold text-otec-dark mb-3">{benefit.title}</h3>
@@ -302,7 +411,7 @@ export default function Home() {
       </section>
 
       {/* Cómo Funciona */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">Cómo Funciona</h2>
@@ -369,6 +478,7 @@ export default function Home() {
               <h4 className="font-bold mb-4">Enlaces</h4>
               <ul className="space-y-2 text-gray-300">
                 <li><a href="#ejemplos" className="hover:text-otec-orange">Ejemplos</a></li>
+                <li><a href="#cursos" className="hover:text-otec-orange">Cursos VR</a></li>
                 <li><a href="#beneficios" className="hover:text-otec-orange">Beneficios</a></li>
                 <li><a href="https://achsotec.cl" className="hover:text-otec-orange">OTEC ACHS</a></li>
               </ul>
