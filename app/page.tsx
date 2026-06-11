@@ -1,38 +1,136 @@
 'use client'
 
+import TourPreview from './TourPreview'
+
 export default function Home() {
   const tours = [
     {
       id: 1,
       title: 'Metro Santiago - Cambio de Ruedas',
-      description: 'Aprende los procedimientos de cambio de ruedas en entornos seguros',
-      url: 'https://metrosantiago.eldojofgc.cl/cambioderuedas/',
+      description: 'Aprende los procedimientos de cambio de ruedas en entornos seguros y controlados',
       sector: 'Transporte',
       icon: '🚌',
+      image: '/metro-opt.jpg',
+      url: 'https://metrosantiago.eldojofgc.cl/cambioderuedas/',
+      hotspots: [
+        {
+          x: 25,
+          y: 30,
+          label: 'Zona de Seguridad',
+          description: 'Área designada para cambio de ruedas con protección contra tránsito',
+          type: 'safety',
+        },
+        {
+          x: 50,
+          y: 50,
+          label: 'Equipo de Protección',
+          description: 'EPP requerido: chaleco reflectante, casco y guantes de trabajo',
+          type: 'warning',
+        },
+        {
+          x: 75,
+          y: 35,
+          label: 'Procedimiento Crítico',
+          description: 'Asegurar vehículo con cuñas antes de iniciar levante',
+          type: 'info',
+        },
+      ],
     },
     {
       id: 2,
       title: 'IANSA - Tour Instalaciones',
       description: 'Recorre las instalaciones y conoce los puntos críticos de seguridad',
-      url: 'https://iansa.eldojofgc.cl/Tour/',
       sector: 'Manufactura',
       icon: '🏭',
+      image: '/iansa-opt.jpg',
+      url: 'https://iansa.eldojofgc.cl/Tour/',
+      hotspots: [
+        {
+          x: 30,
+          y: 40,
+          label: 'Ruta de Evacuación',
+          description: 'Camino seguro hacia punto de concentración en caso de emergencia',
+          type: 'safety',
+        },
+        {
+          x: 60,
+          y: 45,
+          label: 'Zona de Maquinaria',
+          description: 'Área de operación de equipos: uso obligatorio de EPP completo',
+          type: 'warning',
+        },
+        {
+          x: 45,
+          y: 65,
+          label: 'Punto de Encuentro',
+          description: 'Ubicación designada para conteo de personal después de evacuar',
+          type: 'info',
+        },
+      ],
     },
     {
       id: 3,
       title: 'Arauco - Ruta Forestal',
       description: 'Explora entornos forestales y procedimientos de seguridad en altura',
-      url: 'https://arauco.eldojofgc.cl/Rutaforestal/',
       sector: 'Forestal',
       icon: '🌲',
+      image: '/arauco-opt.jpg',
+      url: 'https://arauco.eldojofgc.cl/Rutaforestal/',
+      hotspots: [
+        {
+          x: 40,
+          y: 25,
+          label: 'Trabajo en Altura',
+          description: 'Sistema de arnés obligatorio con anclaje certificado',
+          type: 'warning',
+        },
+        {
+          x: 55,
+          y: 50,
+          label: 'Zonas de Tránsito',
+          description: 'Rutas seguras para personal y equipos en terreno forestal',
+          type: 'safety',
+        },
+        {
+          x: 70,
+          y: 65,
+          label: 'Puntos de Riesgo',
+          description: 'Áreas con riesgo de caída o deslizamiento: requiere supervisión',
+          type: 'warning',
+        },
+      ],
     },
     {
       id: 4,
       title: 'Aquachile - Fileteadora Reader',
       description: 'Entrena en el uso seguro de maquinaria pesada industrial',
-      url: 'https://aquachile.eldojofgc.cl/fileteadorabeader200/',
       sector: 'Alimentos',
       icon: '🐟',
+      image: '/arauco-opt.jpg', // placeholder, podría ser otra imagen
+      url: 'https://aquachile.eldojofgc.cl/fileteadorabeader200/',
+      hotspots: [
+        {
+          x: 35,
+          y: 35,
+          label: 'Zona de Operación',
+          description: 'Área de trabajo con elementos cortantes: solo personal capacitado',
+          type: 'warning',
+        },
+        {
+          x: 50,
+          y: 60,
+          label: 'Parada de Emergencia',
+          description: 'Botón rojo de parada: accesible desde cualquier punto de la máquina',
+          type: 'safety',
+        },
+        {
+          x: 70,
+          y: 40,
+          label: 'Mantenimiento Seguro',
+          description: 'Bloqueo de energía (LOTO) obligatorio antes de cualquier intervención',
+          type: 'info',
+        },
+      ],
     },
   ]
 
@@ -141,42 +239,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ejemplos Vivos - Tours 360° */}
+      {/* Ejemplos Vivos - Tours 360° con Hotspots */}
       <section id="ejemplos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">Experimenta Mapeos 360°</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explora tours interactivos reales de empresas que ya usan esta tecnología para capacitación
+              Explora tours interactivos con puntos de seguridad marcados. Haz clic en los números para descubrir información crítica sin revelar contenido confidencial.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {tours.map((tour) => (
-              <div
-                key={tour.id}
-                className="card-hover bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl"
-              >
-                <div className="h-64 bg-gradient-to-br from-otec-blue to-otec-dark flex items-center justify-center">
-                  <span className="text-8xl">{tour.icon}</span>
-                </div>
-                <div className="p-8">
-                  <div className="inline-block px-3 py-1 bg-otec-orange text-white text-sm font-bold rounded-full mb-3">
-                    {tour.sector}
-                  </div>
-                  <h3 className="text-2xl font-bold text-otec-dark mb-3">{tour.title}</h3>
-                  <p className="text-gray-700 mb-6">{tour.description}</p>
-                  <a
-                    href={tour.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-6 py-3 bg-otec-blue text-white font-bold rounded-lg hover:bg-otec-orange transition"
-                  >
-                    Explorar Tour 360° →
-                  </a>
-                </div>
-              </div>
+              <TourPreview key={tour.id} tour={tour} />
             ))}
+          </div>
+
+          {/* Legenda de colores */}
+          <div className="max-w-2xl mx-auto bg-otec-light p-6 rounded-xl">
+            <h3 className="text-lg font-bold text-otec-dark mb-4">📍 Código de Hotspots:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-green-500" />
+                <span className="text-sm text-gray-700"><strong>Verde:</strong> Zona Segura</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-yellow-500" />
+                <span className="text-sm text-gray-700"><strong>Amarillo:</strong> Advertencia</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-blue-500" />
+                <span className="text-sm text-gray-700"><strong>Azul:</strong> Información</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
