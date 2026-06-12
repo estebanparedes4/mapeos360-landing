@@ -48,14 +48,9 @@ export function AnimatedCounter({ end, duration = 2500, suffix = '' }: CounterPr
   return (
     <span 
       ref={containerRef}
-      className="inline-block font-bold text-4xl"
+      className="inline-block font-bold text-4xl text-white"
       style={{
         fontVariantNumeric: 'tabular-nums',
-        background: 'linear-gradient(135deg, #003B7A 0%, #FF6B35 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        textShadow: 'none',
       }}
     >
       {count.toLocaleString('es-CL')}

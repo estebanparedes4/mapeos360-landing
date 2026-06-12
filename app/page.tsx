@@ -280,7 +280,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-otec-dark mb-6 leading-tight">
-                [ACTUALIZADO] Mapeos 360° <span className="gradient-text">inmersivos</span>
+                Mapeos 360° <span className="gradient-text">inmersivos</span>
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Experiencias inmersivas en 360° que transforman la capacitación en seguridad laboral. 
@@ -479,7 +479,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:comercialotec@otecachsservicios.cl"
-              className="px-8 py-4 bg-otec-orange text-white font-bold rounded-lg hover:bg-white hover:text-otec-orange transition"
+              className="px-8 py-4 bg-white text-otec-blue font-bold rounded-lg hover:bg-otec-light hover:text-otec-dark transition"
             >
               📧 comercialotec@otecachsservicios.cl
             </a>
