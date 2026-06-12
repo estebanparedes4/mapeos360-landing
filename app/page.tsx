@@ -438,7 +438,7 @@ export default function Home() {
       </section>
 
       {/* Beneficios - Carrusel 3D Interactivo */}
-      <BenefitsCarousel3D />
+      <div id="beneficios"><BenefitsCarousel3D /></div>
 
       {/* Cómo Funciona */}
       <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
