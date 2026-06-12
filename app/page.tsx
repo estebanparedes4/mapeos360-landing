@@ -304,13 +304,11 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, idx) => (
                 <div key={idx} className="bg-gradient-to-br from-otec-blue to-otec-dark p-8 rounded-xl text-white text-center">
-                  <div className="text-4xl font-bold mb-2 text-otec-blue animate-counter">
-                    <AnimatedCounter 
-                      end={stat.number} 
-                      duration={2000} 
-                      suffix={stat.suffix}
-                    />
-                  </div>
+                  <AnimatedCounter 
+                    end={stat.number} 
+                    duration={2500} 
+                    suffix={stat.suffix}
+                  />
                   <div className="text-sm">{stat.label}</div>
                 </div>
               ))}
