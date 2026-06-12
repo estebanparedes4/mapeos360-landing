@@ -160,20 +160,20 @@ export default function TourPreview({ tour }: TourPreviewProps) {
                 >
                   ▶️ Ver Demo (30 segundos)
                 </button>
-                <button
-                  onClick={() => setShowAccessForm(true)}
-                  className="px-6 py-3 border-2 border-otec-blue text-otec-blue font-bold rounded-lg hover:bg-otec-light transition"
+                <a
+                  href="#formulario-contacto"
+                  className="px-6 py-3 border-2 border-otec-blue text-otec-blue font-bold rounded-lg hover:bg-otec-light transition text-center"
                 >
                   🔐 Solicitar Acceso Tour Completo
-                </button>
+                </a>
               </>
             ) : (
-              <button
-                onClick={() => setShowAccessForm(true)}
-                className="px-6 py-3 bg-otec-blue text-white font-bold rounded-lg hover:bg-otec-orange transition"
+              <a
+                href="#formulario-contacto"
+                className="px-6 py-3 bg-otec-blue text-white font-bold rounded-lg hover:bg-otec-orange transition text-center"
               >
                 🔐 Solicitar Acceso Tour 360°
-              </button>
+              </a>
             )}
           </div>
         </div>
@@ -214,15 +214,12 @@ export default function TourPreview({ tour }: TourPreviewProps) {
                 El tour completo contiene material sensible y confidencial de las empresas participantes y está disponible solo bajo solicitud formal.
               </p>
               <div className="flex gap-4">
-                <button
-                  onClick={() => {
-                    setIsModalOpen(false)
-                    setShowAccessForm(true)
-                  }}
-                  className="px-6 py-3 bg-otec-orange text-white font-bold rounded-lg hover:bg-otec-blue transition flex-1"
+                <a
+                  href="#formulario-contacto"
+                  className="px-6 py-3 bg-otec-orange text-white font-bold rounded-lg hover:bg-otec-blue transition flex-1 text-center"
                 >
                   Solicitar Acceso Completo
-                </button>
+                </a>
                 <button
                   onClick={() => setIsModalOpen(false)}
                   className="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-gray-300 transition"

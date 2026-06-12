@@ -426,7 +426,7 @@ export default function Home() {
                 </div>
 
                 <a
-                  href="mailto:comercialotec@otecachsservicios.cl"
+                  href="#formulario-contacto"
                   className="text-otec-blue hover:text-otec-orange font-bold text-sm"
                 >
                   Solicitar información →
