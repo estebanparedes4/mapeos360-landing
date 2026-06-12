@@ -44,9 +44,9 @@ export default function TourPreview({ tour }: TourPreviewProps) {
 
   return (
     <>
-      <div className="card-hover bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl">
+      <div className="card-hover bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl flex flex-col h-full">
         {/* Video o Imagen con hotspots */}
-        <div className="relative h-64 bg-gray-900 group">
+        <div className="relative h-64 bg-gray-900 group flex-shrink-0">
           {tour.video ? (
             <video
               src={tour.video}
@@ -116,7 +116,7 @@ export default function TourPreview({ tour }: TourPreviewProps) {
 
         {/* Info hotspot activo */}
         {activeHotspot && (
-          <div className="bg-blue-50 border-l-4 border-otec-blue p-4">
+          <div className="bg-blue-50 border-l-4 border-otec-blue p-4 flex-shrink-0">
             <div className="flex justify-between items-start mb-2">
               <h4 className="font-bold text-otec-dark">{activeHotspot.label}</h4>
               <button
@@ -130,22 +130,28 @@ export default function TourPreview({ tour }: TourPreviewProps) {
           </div>
         )}
 
-        {/* Contenido */}
-        <div className="p-8">
-          <div className="inline-block px-3 py-1 bg-otec-orange text-white text-sm font-bold rounded-full mb-3">
+        {/* Contenido - Estructura con flexbox para altura consistente */}
+        <div className="p-8 flex flex-col flex-grow">
+          <div className="inline-block px-3 py-1 bg-otec-orange text-white text-sm font-bold rounded-full mb-4 w-fit">
             {tour.sector}
           </div>
-          <h3 className="text-2xl font-bold text-otec-dark mb-3">{tour.title}</h3>
-          <p className="text-gray-700 mb-6">{tour.description}</p>
+          
+          <h3 className="text-2xl font-bold text-otec-dark mb-3 line-clamp-2">
+            {tour.title}
+          </h3>
+          
+          <p className="text-gray-700 mb-6 line-clamp-3 flex-grow">
+            {tour.description}
+          </p>
 
           {/* BANNER: Este es solo material de demo */}
-          <div className="bg-yellow-50 border-2 border-yellow-300 p-4 rounded-lg mb-6">
+          <div className="bg-yellow-50 border-2 border-yellow-300 p-4 rounded-lg mb-6 flex-shrink-0">
             <p className="text-xs text-yellow-900">
               <strong>⚠️ DEMO DE 30 SEGUNDOS:</strong> Este es material previsualizador. El tour 360° completo contiene contenido sensible y privado de la empresa. Para acceso completo, solicítalo a nuestro equipo.
             </p>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 mt-auto">
             {tour.video ? (
               <>
                 <button
@@ -170,8 +176,6 @@ export default function TourPreview({ tour }: TourPreviewProps) {
               </button>
             )}
           </div>
-
-
         </div>
       </div>
 
