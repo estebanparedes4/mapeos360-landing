@@ -311,8 +311,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">Experimenta Mapeos 360°</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              🔴 <strong>Demos de 30 segundos</strong> que muestran el concepto sin revelar contenido confidencial. 
-              Los tours 360° completos están disponibles solo bajo solicitud formal para proteger la privacidad de nuestros clientes.
+              Explora tours interactivos de capacitación en seguridad laboral con experiencias inmersivas en 360°.
             </p>
           </div>
 
@@ -320,25 +319,6 @@ export default function Home() {
             {tours.map((tour) => (
               <TourPreview key={tour.id} tour={tour} />
             ))}
-          </div>
-
-          {/* Legenda de colores */}
-          <div className="max-w-2xl mx-auto bg-otec-light p-6 rounded-xl">
-            <h3 className="text-lg font-bold text-otec-dark mb-4">📍 Código de Hotspots:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 rounded-full bg-green-500" />
-                <span className="text-sm text-gray-700"><strong>Verde:</strong> Zona Segura</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 rounded-full bg-yellow-500" />
-                <span className="text-sm text-gray-700"><strong>Amarillo:</strong> Advertencia</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-4 h-4 rounded-full bg-blue-500" />
-                <span className="text-sm text-gray-700"><strong>Azul:</strong> Información</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>

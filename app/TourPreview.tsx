@@ -171,26 +171,7 @@ export default function TourPreview({ tour }: TourPreviewProps) {
             )}
           </div>
 
-          {/* Mini legenda hotspots */}
-          {tour.hotspots.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <p className="text-xs text-gray-600 font-semibold mb-3">PUNTOS DE INTERÉS:</p>
-              <div className="space-y-2">
-                {tour.hotspots.map((hotspot, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm">
-                    <div
-                      className={`w-3 h-3 rounded-full ${getHotspotColor(
-                        hotspot.type
-                      )}`}
-                    />
-                    <span className="text-gray-700">
-                      <strong>{hotspot.label}:</strong> {hotspot.description}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+
         </div>
       </div>
 
