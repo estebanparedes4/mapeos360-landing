@@ -247,9 +247,9 @@ export default function Home() {
           {/* Logo OTEC */}
           <div className="flex items-center gap-2">
             <img 
-              src="/Logo_Otec_Color.png" 
+              src="/Logo_Otec_Header.png" 
               alt="OTEC ACHS Servicios" 
-              className="h-12 w-auto"
+              className="h-10 w-auto"
               loading="eager"
             />
             <span className="hidden sm:inline text-sm text-white font-semibold">Mapeos 360°</span>
@@ -478,9 +478,9 @@ export default function Home() {
           {/* Logo Footer */}
           <div className="mb-8 pb-8 border-b border-gray-700">
             <img 
-              src="/Logo_Otec_Blanco.png" 
+              src="/Logo_Otec_Footer.png" 
               alt="OTEC ACHS Servicios" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
               loading="lazy"
             />
           </div>
