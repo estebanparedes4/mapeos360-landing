@@ -1,6 +1,7 @@
 'use client'
 
 import TourPreview from './TourPreview'
+import BenefitsCarousel3D from './BenefitsCarousel3D'
 
 export default function Home() {
   const tours = [
@@ -435,30 +436,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beneficios */}
-      <section id="beneficios" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-otec-dark mb-4">¿Por qué elegir Mapeos 360°?</h2>
-            <p className="text-xl text-gray-600">
-              Transformamos la capacitación en seguridad laboral
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, idx) => (
-              <div
-                key={idx}
-                className="bg-otec-light p-8 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                <div className="text-5xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-otec-dark mb-3">{benefit.title}</h3>
-                <p className="text-gray-700">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Beneficios - Carrusel 3D Interactivo */}
+      <BenefitsCarousel3D />
 
       {/* Cómo Funciona */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
