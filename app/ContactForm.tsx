@@ -74,23 +74,23 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="formulario-contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="formulario-contacto" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Lado izquierdo - Texto e imagen */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between order-2 lg:order-1">
             <div>
-              <h2 className="text-5xl font-bold text-otec-dark mb-6">Optimiza tus procesos hoy mismo.</h2>
-              <p className="text-xl text-gray-700 mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-4 sm:mb-6">Optimiza tus procesos hoy mismo.</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-3 sm:mb-4 leading-relaxed">
                 Completa el siguiente formulario para solicitar una asesoría personalizada o resolver dudas técnicas.
               </p>
-              <p className="text-gray-600 mb-8">
+              <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
                 Un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.
               </p>
             </div>
 
             {/* Imagen profesional */}
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg hidden sm:block">
               <img
                 src="/contact-team-hero.webp"
                 alt="Contacta con nuestro equipo"
@@ -102,10 +102,10 @@ export default function ContactForm() {
 
           {/* Lado derecho - Formulario */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Nombre y Apellido */}
               <div>
-                <label className="block text-sm font-bold text-otec-dark mb-2">
+                <label className="block text-xs sm:text-sm font-bold text-otec-dark mb-1 sm:mb-2">
                   Nombre y Apellido *
                 </label>
                 <input
@@ -114,7 +114,7 @@ export default function ContactForm() {
                   value={formData.nombre}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-otec-blue bg-gray-50"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-otec-blue bg-gray-50 text-sm"
                   placeholder="Tu nombre completo"
                 />
               </div>

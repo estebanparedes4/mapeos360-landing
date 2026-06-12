@@ -243,74 +243,74 @@ export default function Home() {
     <div className="w-full bg-white">
       {/* Header/Navegación */}
       <header className="fixed top-0 w-full bg-otec-blue shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-3 flex justify-between items-center">
           {/* Logo OTEC */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <img 
               src="/Logo_Otec_Header.png" 
               alt="OTEC ACHS Servicios" 
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 w-auto"
               loading="eager"
             />
-            <span className="hidden sm:inline text-sm text-white font-semibold">Mapeos 360°</span>
+            <span className="hidden sm:inline text-xs sm:text-sm text-white font-semibold">Mapeos 360°</span>
           </div>
           
           {/* Navigation */}
-          <nav className="hidden md:flex gap-8">
-            <a href="#ejemplos" className="text-white hover:text-otec-orange transition font-medium">
+          <nav className="hidden md:flex gap-4 lg:gap-8">
+            <a href="#ejemplos" className="text-white hover:text-otec-orange transition font-medium text-sm lg:text-base">
               Ejemplos
             </a>
-            <a href="#cursos" className="text-white hover:text-otec-orange transition font-medium">
+            <a href="#cursos" className="text-white hover:text-otec-orange transition font-medium text-sm lg:text-base">
               Cursos VR
             </a>
-            <a href="#beneficios" className="text-white hover:text-otec-orange transition font-medium">
+            <a href="#beneficios" className="text-white hover:text-otec-orange transition font-medium text-sm lg:text-base">
               Beneficios
             </a>
-            <a href="#contacto" className="text-white hover:text-otec-orange transition font-medium">
+            <a href="#formulario-contacto" className="text-white hover:text-otec-orange transition font-medium text-sm lg:text-base">
               Contacto
             </a>
           </nav>
-          
-
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-otec-light to-white">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-3 sm:px-6 lg:px-8 bg-gradient-to-b from-otec-light to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-otec-dark mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-otec-dark mb-4 sm:mb-6 leading-tight">
                 Mapeos 360° <span className="gradient-text">inmersivos</span>
               </h1>
-              <p className="text-xl text-gray-700 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed">
                 Experiencias inmersivas en 360° que transforman la capacitación en seguridad laboral. 
                 Aprende en entornos virtuales seguros, sin riesgos reales.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#ejemplos"
-                  className="px-8 py-4 bg-otec-blue text-white font-bold rounded-lg hover:bg-otec-orange transition transform hover:scale-105"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-otec-blue text-white font-bold rounded-lg hover:bg-otec-orange transition transform hover:scale-105 text-center text-sm sm:text-base"
                 >
                   Ver Demostraciones
                 </a>
                 <a
-                  href="mailto:comercialotec@otecachsservicios.cl"
-                  className="px-8 py-4 border-2 border-otec-blue text-otec-blue font-bold rounded-lg hover:bg-otec-light transition"
+                  href="#formulario-contacto"
+                  className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-otec-blue text-otec-blue font-bold rounded-lg hover:bg-otec-light transition text-center text-sm sm:text-base"
                 >
                   Contactanos
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {stats.map((stat, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-otec-blue to-otec-dark p-8 rounded-xl text-white text-center">
-                  <AnimatedCounter 
-                    end={stat.number} 
-                    duration={2500} 
-                    suffix={stat.suffix}
-                  />
-                  <div className="text-sm">{stat.label}</div>
+                <div key={idx} className="bg-gradient-to-br from-otec-blue to-otec-dark p-4 sm:p-6 md:p-8 rounded-xl text-white text-center">
+                  <div className="text-3xl sm:text-4xl font-bold mb-2">
+                    <AnimatedCounter 
+                      end={stat.number} 
+                      duration={2500} 
+                      suffix={stat.suffix}
+                    />
+                  </div>
+                  <div className="text-xs sm:text-sm">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -319,16 +319,16 @@ export default function Home() {
       </section>
 
       {/* Ejemplos Vivos - Tours 360° con Videos Demo */}
-      <section id="ejemplos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="ejemplos" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-otec-dark mb-4">Experimenta Mapeos 360°</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Experimenta Mapeos 360°</h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
               Explora tours interactivos de capacitación en seguridad laboral con experiencias inmersivas en 360°.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 auto-rows-fr mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 auto-rows-fr">
             {tours.map((tour) => (
               <TourPreview key={tour.id} tour={tour} />
             ))}
@@ -337,75 +337,75 @@ export default function Home() {
       </section>
 
       {/* Pilares de OTEC con Iris */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-otec-light">
+      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-otec-light">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-otec-dark mb-4">Nuestros Pilares</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Nuestros Pilares</h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
               Construimos cada experiencia sobre cinco pilares que definen nuestra esencia
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {/* Experiencia */}
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-3 sm:mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
                 <img src="/iris/01-experiencia.png" alt="Experiencia" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-otec-dark mb-2">Experiencia</h3>
-              <p className="text-sm text-gray-600">11+ años formando personas con respaldo de Achs</p>
+              <h3 className="text-base sm:text-lg font-bold text-otec-dark mb-2">Experiencia</h3>
+              <p className="text-xs sm:text-sm text-gray-600">11+ años formando personas con respaldo de Achs</p>
             </div>
 
             {/* Cercanía */}
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-3 sm:mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
                 <img src="/iris/02-cercania.png" alt="Cercanía" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-otec-dark mb-2">Cercanía</h3>
-              <p className="text-sm text-gray-600">Acompañamiento real y personalizado</p>
+              <h3 className="text-base sm:text-lg font-bold text-otec-dark mb-2">Cercanía</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Acompañamiento real y personalizado</p>
             </div>
 
             {/* Innovación */}
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-3 sm:mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
                 <img src="/iris/03-innovacion.png" alt="Innovación" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-otec-dark mb-2">Innovación</h3>
-              <p className="text-sm text-gray-600">Soluciones y tecnologías educativas</p>
+              <h3 className="text-base sm:text-lg font-bold text-otec-dark mb-2">Innovación</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Soluciones y tecnologías educativas</p>
             </div>
 
             {/* Resultados */}
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-3 sm:mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
                 <img src="/iris/04-resultados.png" alt="Resultados" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-otec-dark mb-2">Resultados</h3>
-              <p className="text-sm text-gray-600">Cambios concretos en personas y equipos</p>
+              <h3 className="text-base sm:text-lg font-bold text-otec-dark mb-2">Resultados</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Cambios concretos en personas y equipos</p>
             </div>
 
             {/* Excelencia */}
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-3 sm:mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
                 <img src="/iris/05-excelencia.png" alt="Excelencia" className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-otec-dark mb-2">Excelencia</h3>
-              <p className="text-sm text-gray-600">Altos estándares en calidad y diseño</p>
+              <h3 className="text-base sm:text-lg font-bold text-otec-dark mb-2">Excelencia</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Altos estándares en calidad y diseño</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Cursos VR */}
-      <section id="cursos" className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
+      <section id="cursos" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-otec-dark mb-4">Soluciones VR & Realidad Aumentada</h2>
-            <p className="text-xl text-gray-600">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Soluciones VR & Realidad Aumentada</h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 px-2">
               Cursos especializados en realidad virtual para capacitación inmersiva
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {vrCourses.map((course, idx) => (
               <div
                 key={idx}
@@ -441,13 +441,13 @@ export default function Home() {
       <BenefitsCarousel3D />
 
       {/* Cómo Funciona */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
+      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-otec-dark mb-4">Cómo Funciona</h2>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Cómo Funciona</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {[
               { step: '1', title: 'Evaluación', desc: 'Identificamos necesidades de capacitación' },
               { step: '2', title: 'Diseño', desc: 'Creamos experiencias personalizadas' },
@@ -455,13 +455,13 @@ export default function Home() {
               { step: '4', title: 'Medición', desc: 'Monitoreamos resultados en tiempo real' },
             ].map((item, idx) => (
               <div key={idx} className="relative">
-                <div className="bg-gradient-to-br from-otec-blue to-otec-orange rounded-full w-16 h-16 flex items-center justify-center text-white text-2xl font-bold mb-4">
+                <div className="bg-gradient-to-br from-otec-blue to-otec-orange rounded-full w-14 sm:w-16 h-14 sm:h-16 flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-otec-dark mb-2">{item.title}</h3>
-                <p className="text-gray-700">{item.desc}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-otec-dark mb-2">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-700">{item.desc}</p>
                 {idx < 3 && (
-                  <div className="absolute top-8 -right-4 text-3xl text-otec-orange opacity-30">→</div>
+                  <div className="hidden sm:block absolute top-6 sm:top-8 -right-3 sm:-right-4 text-2xl sm:text-3xl text-otec-orange opacity-30">→</div>
                 )}
               </div>
             ))}
@@ -473,35 +473,35 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="bg-otec-dark text-white py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-otec-dark text-white py-10 sm:py-12 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Logo Footer */}
-          <div className="mb-8 pb-8 border-b border-gray-700">
+          <div className="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-700">
             <img 
               src="/Logo_Otec_Footer.png" 
               alt="OTEC ACHS Servicios" 
-              className="h-12 w-auto"
+              className="h-10 sm:h-12 w-auto"
               loading="lazy"
             />
           </div>
 
           {/* CTA Section in Footer */}
-          <div className="bg-gradient-to-r from-otec-blue/20 to-otec-orange/20 rounded-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold mb-4 text-center">Transforma la capacitación en tu organización</h2>
-            <p className="text-lg mb-6 opacity-90 text-center">
+          <div className="bg-gradient-to-r from-otec-blue/20 to-otec-orange/20 rounded-lg p-6 sm:p-8 mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center">Transforma la capacitación en tu organización</h2>
+            <p className="text-sm sm:text-lg mb-4 sm:mb-6 opacity-90 text-center leading-relaxed">
               Contacta a OTEC ACHS Servicios y descubre cómo Mapeos 360° puede mejorar 
               la seguridad y el aprendizaje en tu empresa.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="mailto:comercialotec@otecachsservicios.cl"
-                className="px-8 py-3 bg-white text-otec-blue font-bold rounded-lg hover:bg-otec-light hover:text-otec-dark transition text-center"
+                className="px-6 sm:px-8 py-2 sm:py-3 bg-white text-otec-blue font-bold rounded-lg hover:bg-otec-light hover:text-otec-dark transition text-center text-sm sm:text-base"
               >
                 📧 comercialotec@otecachsservicios.cl
               </a>
               <a
                 href="https://achsotec.cl"
-                className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-otec-blue transition text-center"
+                className="px-6 sm:px-8 py-2 sm:py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-otec-blue transition text-center text-sm sm:text-base"
               >
                 🌐 achsotec.cl
               </a>
@@ -509,16 +509,16 @@ export default function Home() {
           </div>
 
           {/* Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-t border-gray-700 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 border-t border-gray-700 pt-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Mapeos 360°</h3>
-              <p className="text-gray-300 text-sm">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Mapeos 360°</h3>
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 Experiencias inmersivas en 360° para capacitación en seguridad laboral. Aprende en entornos virtuales seguros, sin riesgos reales.
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Enlaces</h4>
-              <ul className="space-y-2 text-gray-300 text-sm">
+              <h4 className="font-bold mb-3 sm:mb-4">Enlaces</h4>
+              <ul className="space-y-2 text-gray-300 text-xs sm:text-sm">
                 <li><a href="#ejemplos" className="hover:text-otec-orange transition">Ejemplos</a></li>
                 <li><a href="#cursos" className="hover:text-otec-orange transition">Cursos VR</a></li>
                 <li><a href="#beneficios" className="hover:text-otec-orange transition">Beneficios</a></li>
@@ -526,13 +526,13 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Contacto</h4>
-              <p className="text-gray-300 text-sm mb-2">📧 comercialotec@otecachsservicios.cl</p>
-              <p className="text-gray-300 text-sm mb-2">🌐 achsotec.cl</p>
-              <p className="text-gray-300 text-sm">📱 @otec.achs.servicios</p>
+              <h4 className="font-bold mb-3 sm:mb-4">Contacto</h4>
+              <p className="text-gray-300 text-xs sm:text-sm mb-2">📧 comercialotec@otecachsservicios.cl</p>
+              <p className="text-gray-300 text-xs sm:text-sm mb-2">🌐 achsotec.cl</p>
+              <p className="text-gray-300 text-xs sm:text-sm">📱 @otec.achs.servicios</p>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-700 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
             <p>&copy; 2026 OTEC ACHS Servicios. Todos los derechos reservados.</p>
           </div>
         </div>
