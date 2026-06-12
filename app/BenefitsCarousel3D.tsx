@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface Benefit {
   id: number
   icon: string
   title: string
   description: string
-  colorBg: string
+  color: string
 }
 
 const benefits: Benefit[] = [
@@ -16,47 +16,58 @@ const benefits: Benefit[] = [
     icon: '🎯',
     title: 'Aprendizaje Experiencial',
     description: 'Los colaboradores aprenden en entornos inmersivos que simulan la realidad sin riesgos.',
-    colorBg: 'bg-gradient-to-br from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600',
+    color: 'from-red-500 to-orange-500',
   },
   {
     id: 2,
     icon: '⏱️',
     title: 'Eficiencia de Tiempo',
     description: 'Reduce tiempos de inducción hasta un 40% con simulaciones 360°.',
-    colorBg: 'bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600',
+    color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 3,
     icon: '💰',
     title: 'Reducción de Costos',
     description: 'Minimiza costos de capacitación presencial y accidentes laborales.',
-    colorBg: 'bg-gradient-to-br from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600',
+    color: 'from-amber-500 to-orange-500',
   },
   {
     id: 4,
     icon: '📊',
     title: 'Seguimiento en Tiempo Real',
     description: 'Monitorea el progreso de cada colaborador con reportes detallados.',
-    colorBg: 'bg-gradient-to-br from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600',
+    color: 'from-green-500 to-emerald-500',
   },
   {
     id: 5,
     icon: '🔒',
     title: 'Entorno Seguro',
     description: 'Permite errores sin consecuencias reales para aprender y corregir.',
-    colorBg: 'bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600',
+    color: 'from-purple-500 to-pink-500',
   },
   {
     id: 6,
     icon: '🌍',
     title: 'Accesibilidad',
     description: 'Accede desde cualquier dispositivo, en cualquier momento y lugar.',
-    colorBg: 'bg-gradient-to-br from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600',
+    color: 'from-indigo-500 to-blue-500',
   },
 ]
 
-export default function BenefitsFlipCards() {
+export default function BenefitsCarousel3D() {
+  const [rotation, setRotation] = useState(0)
   const [flipped, setFlipped] = useState<{ [key: number]: boolean }>({})
+  const totalCards = benefits.length
+  const anglePerCard = 360 / totalCards
+
+  // Auto-rotate
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotation((prev) => (prev - 2) % 360)
+    }, 50)
+    return () => clearInterval(interval)
+  }, [])
 
   const toggleFlip = (id: number) => {
     setFlipped((prev) => ({
@@ -65,8 +76,16 @@ export default function BenefitsFlipCards() {
     }))
   }
 
+  const handleNext = () => {
+    setRotation((prev) => prev - anglePerCard)
+  }
+
+  const handlePrev = () => {
+    setRotation((prev) => prev + anglePerCard)
+  }
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-otec-light to-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-otec-light to-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -77,91 +96,154 @@ export default function BenefitsFlipCards() {
             Transformamos la capacitación en seguridad laboral con experiencias inmersivas
           </p>
           <p className="text-sm text-gray-500 mt-3">
-            👆 Haz click en cualquier tarjeta para descubrir más
+            👆 Haz click en las tarjetas para ver más • Rotación automática 360°
           </p>
         </div>
 
-        {/* Flip Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {benefits.map((benefit) => {
-            const isFlipped = flipped[benefit.id] || false
+        {/* 3D Carousel Container */}
+        <div
+          className="relative h-96 sm:h-[450px] md:h-[500px] flex items-center justify-center select-none"
+          style={{
+            perspective: '1200px',
+            userSelect: 'none',
+          }}
+        >
+          {/* 3D Carousel */}
+          <div
+            className="relative w-full h-full"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: `rotateY(${rotation}deg)`,
+              transition: 'transform 0.05s linear',
+            }}
+          >
+            {benefits.map((benefit, idx) => {
+              const angle = (idx * anglePerCard * Math.PI) / 180
+              const radius = 300
+              const z = Math.cos(angle) * radius
 
-            return (
-              <div
-                key={benefit.id}
-                className="h-80 cursor-pointer perspective"
-                onClick={() => toggleFlip(benefit.id)}
-              >
-                {/* Flip Container */}
+              // Opacity based on distance
+              const opacity = Math.max(0.4, 1 - Math.abs((z + radius) / (2 * radius)) * 0.5)
+              // Scale based on distance
+              const scale = Math.max(0.75, 1 - Math.abs((z + radius) / (2 * radius)) * 0.25)
+
+              const isFlipped = flipped[benefit.id] || false
+
+              return (
                 <div
-                  className="relative w-full h-full transition-transform duration-500"
+                  key={benefit.id}
+                  className="absolute w-72 h-80 sm:h-96 cursor-pointer"
+                  onClick={() => toggleFlip(benefit.id)}
                   style={{
                     transformStyle: 'preserve-3d',
-                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    transform: `rotateY(${idx * anglePerCard}deg) translateZ(${radius}px) rotateY(-${idx * anglePerCard}deg)`,
+                    left: '50%',
+                    top: '50%',
+                    marginLeft: '-144px',
+                    marginTop: '-192px',
+                    opacity: opacity,
                   }}
                 >
-                  {/* Front Face */}
+                  {/* Flip Container */}
                   <div
-                    className={`absolute w-full h-full ${benefit.colorBg} rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-lg transition-all duration-300 hover:shadow-2xl`}
+                    className="relative w-full h-full transition-transform duration-500"
                     style={{
-                      backfaceVisibility: 'hidden',
+                      transformStyle: 'preserve-3d',
+                      transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
                     }}
                   >
-                    <div className="text-6xl mb-6 transform transition-transform duration-300 group-hover:scale-110">
-                      {benefit.icon}
+                    {/* Front Face */}
+                    <div
+                      className={`absolute w-full h-full bg-gradient-to-br ${benefit.color} rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all`}
+                      style={{
+                        backfaceVisibility: 'hidden',
+                        transform: `scale(${scale})`,
+                        transformOrigin: 'center',
+                      }}
+                    >
+                      <div className="text-6xl mb-4 drop-shadow-lg">{benefit.icon}</div>
+                      <h3 className="text-2xl font-bold text-center leading-tight drop-shadow-md">
+                        {benefit.title}
+                      </h3>
+                      <div className="mt-6 text-sm text-white/80 text-center">
+                        Haz click para ver más →
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-center leading-tight drop-shadow-md">
-                      {benefit.title}
-                    </h3>
-                    <div className="mt-6 text-sm text-white/80 text-center">
-                      Haz click para ver más →
-                    </div>
-                  </div>
 
-                  {/* Back Face */}
-                  <div
-                    className="absolute w-full h-full bg-otec-dark rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-lg"
-                    style={{
-                      backfaceVisibility: 'hidden',
-                      transform: 'rotateY(180deg)',
-                    }}
-                  >
-                    <p className="text-center text-base leading-relaxed mb-6">
-                      {benefit.description}
-                    </p>
-                    <div className="text-center text-sm text-otec-orange font-semibold">
-                      ← Haz click para volver
+                    {/* Back Face */}
+                    <div
+                      className="absolute w-full h-full bg-otec-dark rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all"
+                      style={{
+                        backfaceVisibility: 'hidden',
+                        transform: `rotateY(180deg) scale(${scale})`,
+                        transformOrigin: 'center',
+                      }}
+                    >
+                      <p className="text-center text-base leading-relaxed">
+                        {benefit.description}
+                      </p>
+                      <div className="mt-6 text-sm text-otec-orange font-semibold">
+                        ← Click para volver
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+
+          {/* Center Focus Indicator */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-2 h-2 bg-otec-orange rounded-full shadow-lg"></div>
+          </div>
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="flex justify-center gap-6 mt-12">
+          <button
+            onClick={handlePrev}
+            className="bg-otec-blue hover:bg-otec-orange text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all hover:scale-110 shadow-lg active:scale-95"
+            aria-label="Rotación anterior"
+          >
+            <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div className="flex flex-col items-center justify-center gap-2">
+            <div className="text-otec-dark font-bold text-lg">
+              {Math.round(((rotation % 360) / anglePerCard + totalCards) % totalCards) + 1} / {totalCards}
+            </div>
+            <div className="text-gray-500 text-xs sm:text-sm">tarjetas visibles</div>
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="bg-otec-blue hover:bg-otec-orange text-white rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center transition-all hover:scale-110 shadow-lg active:scale-95"
+            aria-label="Siguiente rotación"
+          >
+            <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Features Highlight */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto">
           <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-blue">
-            <div className="text-3xl mb-2">🎨</div>
-            <p className="text-sm text-gray-600 font-medium">Experiencias Visuales</p>
+            <div className="text-3xl mb-2">🔄</div>
+            <p className="text-sm text-gray-600 font-medium">Rotación 360°</p>
           </div>
           <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-orange">
-            <div className="text-3xl mb-2">⚡</div>
-            <p className="text-sm text-gray-600 font-medium">Interactivo</p>
+            <div className="text-3xl mb-2">👆</div>
+            <p className="text-sm text-gray-600 font-medium">Click para Flip</p>
           </div>
           <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-purple">
             <div className="text-3xl mb-2">✨</div>
-            <p className="text-sm text-gray-600 font-medium">Fluido y Suave</p>
+            <p className="text-sm text-gray-600 font-medium">Fluido y Legible</p>
           </div>
         </div>
       </div>
-
-      {/* CSS for 3D perspective */}
-      <style jsx>{`
-        .perspective {
-          perspective: 1000px;
-        }
-      `}</style>
     </section>
   )
 }

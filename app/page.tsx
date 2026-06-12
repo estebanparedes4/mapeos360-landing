@@ -269,12 +269,7 @@ export default function Home() {
             </a>
           </nav>
           
-          {/* CTA */}
-          <div className="flex gap-3">
-            <a href="https://achsotec.cl" className="px-4 py-2 bg-otec-blue text-white font-semibold hover:bg-otec-orange transition rounded-lg hidden sm:inline">
-              Acceder
-            </a>
-          </div>
+
         </div>
       </header>
 
