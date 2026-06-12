@@ -240,29 +240,37 @@ export default function Home() {
     <div className="w-full bg-white">
       {/* Header/Navegación */}
       <header className="fixed top-0 w-full bg-white shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+          {/* Logo OTEC */}
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold gradient-text">Mapeos 360°</div>
+            <img 
+              src="/Logo_Otec_Color.png" 
+              alt="OTEC ACHS Servicios" 
+              className="h-12 w-auto"
+              loading="eager"
+            />
+            <span className="hidden sm:inline text-sm text-otec-dark font-semibold">Mapeos 360°</span>
           </div>
+          
+          {/* Navigation */}
           <nav className="hidden md:flex gap-8">
-            <a href="#ejemplos" className="text-otec-dark hover:text-otec-orange transition">
+            <a href="#ejemplos" className="text-otec-dark hover:text-otec-orange transition font-medium">
               Ejemplos
             </a>
-            <a href="#simuladores" className="text-otec-dark hover:text-otec-orange transition">
-              Simuladores
-            </a>
-            <a href="#cursos" className="text-otec-dark hover:text-otec-orange transition">
+            <a href="#cursos" className="text-otec-dark hover:text-otec-orange transition font-medium">
               Cursos VR
             </a>
-            <a href="#beneficios" className="text-otec-dark hover:text-otec-orange transition">
+            <a href="#beneficios" className="text-otec-dark hover:text-otec-orange transition font-medium">
               Beneficios
             </a>
-            <a href="#contacto" className="text-otec-dark hover:text-otec-orange transition">
+            <a href="#contacto" className="text-otec-dark hover:text-otec-orange transition font-medium">
               Contacto
             </a>
           </nav>
+          
+          {/* CTA */}
           <div className="flex gap-3">
-            <a href="https://achsotec.cl" className="px-4 py-2 text-otec-blue font-semibold hover:text-otec-orange transition">
+            <a href="https://achsotec.cl" className="px-4 py-2 text-otec-blue font-semibold hover:text-otec-orange transition hidden sm:inline">
               OTEC ACHS
             </a>
           </div>
@@ -509,30 +517,41 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-otec-dark text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          {/* Logo Footer */}
+          <div className="mb-8 pb-8 border-b border-gray-700">
+            <img 
+              src="/Logo_Otec_Blanco.png" 
+              alt="OTEC ACHS Servicios" 
+              className="h-10 w-auto"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Footer Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Mapeos 360°</h3>
-              <p className="text-gray-300">
-                Experiencias inmersivas para capacitación en seguridad laboral
+              <h3 className="text-xl font-bold mb-4">Mapeos 360°</h3>
+              <p className="text-gray-300 text-sm">
+                Experiencias inmersivas en 360° para capacitación en seguridad laboral. Aprende en entornos virtuales seguros, sin riesgos reales.
               </p>
             </div>
             <div>
               <h4 className="font-bold mb-4">Enlaces</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#ejemplos" className="hover:text-otec-orange">Ejemplos</a></li>
-                <li><a href="#cursos" className="hover:text-otec-orange">Cursos VR</a></li>
-                <li><a href="#beneficios" className="hover:text-otec-orange">Beneficios</a></li>
-                <li><a href="https://achsotec.cl" className="hover:text-otec-orange">OTEC ACHS</a></li>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li><a href="#ejemplos" className="hover:text-otec-orange transition">Ejemplos</a></li>
+                <li><a href="#cursos" className="hover:text-otec-orange transition">Cursos VR</a></li>
+                <li><a href="#beneficios" className="hover:text-otec-orange transition">Beneficios</a></li>
+                <li><a href="https://achsotec.cl" className="hover:text-otec-orange transition">OTEC ACHS</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Contacto</h4>
-              <p className="text-gray-300">📧 comercialotec@otecachsservicios.cl</p>
-              <p className="text-gray-300">🌐 achsotec.cl</p>
-              <p className="text-gray-300">📱 @otec.achs.servicios</p>
+              <p className="text-gray-300 text-sm mb-2">📧 comercialotec@otecachsservicios.cl</p>
+              <p className="text-gray-300 text-sm mb-2">🌐 achsotec.cl</p>
+              <p className="text-gray-300 text-sm">📱 @otec.achs.servicios</p>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
             <p>&copy; 2026 OTEC ACHS Servicios. Todos los derechos reservados.</p>
           </div>
         </div>
