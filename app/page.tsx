@@ -3,6 +3,7 @@
 import { AnimatedCounter } from './AnimatedCounter'
 import TourPreview from './TourPreview'
 import BenefitsCarousel3D from './BenefitsCarousel3D'
+import ContactForm from './ContactForm'
 
 export default function Home() {
   const tours = [
@@ -467,6 +468,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Formulario de Contacto */}
+      <ContactForm />
 
       {/* CTA Section */}
       <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-otec-blue to-otec-dark text-white">
