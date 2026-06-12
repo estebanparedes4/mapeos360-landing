@@ -77,33 +77,26 @@ export default function ContactForm() {
     <section id="formulario-contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Lado izquierdo - Texto e imágenes */}
-          <div>
-            <h2 className="text-5xl font-bold text-otec-dark mb-6">Optimiza tus procesos hoy mismo.</h2>
-            <p className="text-xl text-gray-700 mb-4">
-              Completa el siguiente formulario para solicitar una asesoría personalizada o resolver dudas técnicas.
-            </p>
-            <p className="text-gray-600 mb-8">
-              Un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.
-            </p>
+          {/* Lado izquierdo - Texto e imagen */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <h2 className="text-5xl font-bold text-otec-dark mb-6">Optimiza tus procesos hoy mismo.</h2>
+              <p className="text-xl text-gray-700 mb-4">
+                Completa el siguiente formulario para solicitar una asesoría personalizada o resolver dudas técnicas.
+              </p>
+              <p className="text-gray-600 mb-8">
+                Un especialista se pondrá en contacto contigo en menos de 24 horas hábiles.
+              </p>
+            </div>
 
-            {/* Imágenes decorativas */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden h-48">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-4xl">📋</span>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden h-48">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-4xl">📱</span>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden h-48">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <span className="text-4xl">💻</span>
-                </div>
-              </div>
+            {/* Imagen profesional */}
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="/contact-team-hero.webp"
+                alt="Contacta con nuestro equipo"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
