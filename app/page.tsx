@@ -1,7 +1,6 @@
 'use client'
 
-import TourPreview from './TourPreview'
-import BenefitsCarousel3D from './BenefitsCarousel3D'
+import { AnimatedCounter } from './AnimatedCounter'
 
 export default function Home() {
   const tours = [
@@ -232,9 +231,9 @@ export default function Home() {
   ]
 
   const stats = [
-    { number: '283K+', label: 'Personas Capacitadas' },
-    { number: '11K+', label: 'Empresas Atendidas' },
-    { number: '98%', label: 'Satisfacción' },
+    { number: 283000, label: 'Personas Capacitadas', suffix: '+' },
+    { number: 11000, label: 'Empresas Atendidas', suffix: '+' },
+    { number: 98, label: 'Satisfacción', suffix: '%' },
   ]
 
   return (
@@ -303,7 +302,13 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, idx) => (
                 <div key={idx} className="bg-gradient-to-br from-otec-blue to-otec-dark p-8 rounded-xl text-white text-center">
-                  <div className="text-4xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-4xl font-bold mb-2 text-otec-blue">
+                    <AnimatedCounter 
+                      end={stat.number} 
+                      duration={2000} 
+                      suffix={stat.suffix}
+                    />
+                  </div>
                   <div className="text-sm">{stat.label}</div>
                 </div>
               ))}

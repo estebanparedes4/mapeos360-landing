@@ -7,7 +7,8 @@ interface Benefit {
   icon: string
   title: string
   description: string
-  color: string
+  frontColor: string
+  backColor: string
 }
 
 const benefits: Benefit[] = [
@@ -16,42 +17,48 @@ const benefits: Benefit[] = [
     icon: '🎯',
     title: 'Aprendizaje Experiencial',
     description: 'Los colaboradores aprenden en entornos inmersivos que simulan la realidad sin riesgos.',
-    color: 'from-red-500 to-orange-500',
+    frontColor: 'from-blue-900 to-blue-800',
+    backColor: 'from-purple-500 to-lime-500',
   },
   {
     id: 2,
     icon: '⏱️',
     title: 'Eficiencia de Tiempo',
     description: 'Reduce tiempos de inducción hasta un 40% con simulaciones 360°.',
-    color: 'from-blue-500 to-cyan-500',
+    frontColor: 'from-blue-800 to-blue-900',
+    backColor: 'from-purple-600 to-green-500',
   },
   {
     id: 3,
     icon: '💰',
     title: 'Reducción de Costos',
     description: 'Minimiza costos de capacitación presencial y accidentes laborales.',
-    color: 'from-amber-500 to-orange-500',
+    frontColor: 'from-blue-900 to-blue-800',
+    backColor: 'from-purple-500 to-lime-400',
   },
   {
     id: 4,
     icon: '📊',
     title: 'Seguimiento en Tiempo Real',
     description: 'Monitorea el progreso de cada colaborador con reportes detallados.',
-    color: 'from-green-500 to-emerald-500',
+    frontColor: 'from-blue-800 to-blue-900',
+    backColor: 'from-purple-600 to-green-400',
   },
   {
     id: 5,
     icon: '🔒',
     title: 'Entorno Seguro',
     description: 'Permite errores sin consecuencias reales para aprender y corregir.',
-    color: 'from-purple-500 to-pink-500',
+    frontColor: 'from-blue-900 to-blue-800',
+    backColor: 'from-purple-500 to-lime-500',
   },
   {
     id: 6,
     icon: '🌍',
     title: 'Accesibilidad',
     description: 'Accede desde cualquier dispositivo, en cualquier momento y lugar.',
-    color: 'from-indigo-500 to-blue-500',
+    frontColor: 'from-blue-800 to-blue-900',
+    backColor: 'from-purple-600 to-green-500',
   },
 ]
 
@@ -152,9 +159,9 @@ export default function BenefitsCarousel3D() {
                       transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
                     }}
                   >
-                    {/* Front Face */}
+                    {/* Front Face - Azul ACHS */}
                     <div
-                      className={`absolute w-full h-full bg-gradient-to-br ${benefit.color} rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all`}
+                      className={`absolute w-full h-full bg-gradient-to-br ${benefit.frontColor} rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all`}
                       style={{
                         backfaceVisibility: 'hidden',
                         transform: `scale(${scale})`,
@@ -170,9 +177,9 @@ export default function BenefitsCarousel3D() {
                       </div>
                     </div>
 
-                    {/* Back Face */}
+                    {/* Back Face - Morado ACHS + verdes */}
                     <div
-                      className="absolute w-full h-full bg-otec-dark rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all"
+                      className={`absolute w-full h-full bg-gradient-to-br ${benefit.backColor} rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-2xl hover:shadow-3xl transition-all`}
                       style={{
                         backfaceVisibility: 'hidden',
                         transform: `rotateY(180deg) scale(${scale})`,
@@ -182,7 +189,7 @@ export default function BenefitsCarousel3D() {
                       <p className="text-center text-base leading-relaxed">
                         {benefit.description}
                       </p>
-                      <div className="mt-6 text-sm text-otec-orange font-semibold">
+                      <div className="mt-6 text-sm text-white/90 font-semibold">
                         ← Click para volver
                       </div>
                     </div>
@@ -228,21 +235,6 @@ export default function BenefitsCarousel3D() {
           </button>
         </div>
 
-        {/* Features Highlight */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto">
-          <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-blue">
-            <div className="text-3xl mb-2">🔄</div>
-            <p className="text-sm text-gray-600 font-medium">Rotación 360°</p>
-          </div>
-          <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-orange">
-            <div className="text-3xl mb-2">👆</div>
-            <p className="text-sm text-gray-600 font-medium">Click para Flip</p>
-          </div>
-          <div className="text-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-otec-purple">
-            <div className="text-3xl mb-2">✨</div>
-            <p className="text-sm text-gray-600 font-medium">Fluido y Legible</p>
-          </div>
-        </div>
       </div>
     </section>
   )
