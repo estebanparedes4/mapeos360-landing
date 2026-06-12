@@ -323,6 +323,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pilares de OTEC con Iris */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-otec-light">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-otec-dark mb-4">Nuestros Pilares</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Construimos cada experiencia sobre cinco pilares que definen nuestra esencia
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            {/* Experiencia */}
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+                <img src="/iris/01-experiencia.png" alt="Experiencia" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-bold text-otec-dark mb-2">Experiencia</h3>
+              <p className="text-sm text-gray-600">11+ años formando personas con respaldo de Achs</p>
+            </div>
+
+            {/* Cercanía */}
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+                <img src="/iris/02-cercania.png" alt="Cercanía" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-bold text-otec-dark mb-2">Cercanía</h3>
+              <p className="text-sm text-gray-600">Acompañamiento real y personalizado</p>
+            </div>
+
+            {/* Innovación */}
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+                <img src="/iris/03-innovacion.png" alt="Innovación" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-bold text-otec-dark mb-2">Innovación</h3>
+              <p className="text-sm text-gray-600">Soluciones y tecnologías educativas</p>
+            </div>
+
+            {/* Resultados */}
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+                <img src="/iris/04-resultados.png" alt="Resultados" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-bold text-otec-dark mb-2">Resultados</h3>
+              <p className="text-sm text-gray-600">Cambios concretos en personas y equipos</p>
+            </div>
+
+            {/* Excelencia */}
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 mx-auto mb-4 bg-otec-light rounded-full flex items-center justify-center overflow-hidden border-2 border-otec-blue">
+                <img src="/iris/05-excelencia.png" alt="Excelencia" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-bold text-otec-dark mb-2">Excelencia</h3>
+              <p className="text-sm text-gray-600">Altos estándares en calidad y diseño</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Cursos VR */}
       <section id="cursos" className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
