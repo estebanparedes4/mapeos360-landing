@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 interface Benefit {
   id: number
   icon: string
@@ -47,6 +49,15 @@ const benefits: Benefit[] = [
 ]
 
 export default function BenefitsCarousel3D() {
+  const [flipped, setFlipped] = useState<{ [key: number]: boolean }>({})
+
+  const toggleFlip = (id: number) => {
+    setFlipped((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }))
+  }
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-otec-light to-white">
       <div className="max-w-7xl mx-auto">
@@ -60,22 +71,60 @@ export default function BenefitsCarousel3D() {
           </p>
         </div>
 
-        {/* Benefits Grid - Clean & Simple */}
+        {/* Flip Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.id}
-              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-otec-blue"
-            >
-              <div className="text-6xl mb-4">{benefit.icon}</div>
-              <h3 className="text-2xl font-bold text-otec-dark mb-4">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-base">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+          {benefits.map((benefit) => {
+            const isFlipped = flipped[benefit.id] || false
+
+            return (
+              <div
+                key={benefit.id}
+                className="h-80 cursor-pointer"
+                onClick={() => toggleFlip(benefit.id)}
+              >
+                {/* Flip Container */}
+                <div
+                  className="relative w-full h-full transition-transform duration-500"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                  }}
+                >
+                  {/* Front Face */}
+                  <div
+                    className="absolute w-full h-full bg-white rounded-2xl p-8 flex flex-col justify-center items-center shadow-md hover:shadow-lg transition-shadow border-l-4 border-otec-blue"
+                    style={{
+                      backfaceVisibility: 'hidden',
+                    }}
+                  >
+                    <div className="text-6xl mb-4">{benefit.icon}</div>
+                    <h3 className="text-2xl font-bold text-otec-dark text-center leading-tight">
+                      {benefit.title}
+                    </h3>
+                    <div className="mt-6 text-sm text-gray-500 text-center">
+                      Haz click para ver más →
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div
+                    className="absolute w-full h-full bg-otec-blue rounded-2xl p-8 flex flex-col justify-center items-center text-white shadow-md hover:shadow-lg transition-shadow"
+                    style={{
+                      backfaceVisibility: 'hidden',
+                      transform: 'rotateY(180deg)',
+                    }}
+                  >
+                    <p className="text-center text-base leading-relaxed">
+                      {benefit.description}
+                    </p>
+                    <div className="mt-6 text-sm text-white/80 text-center">
+                      ← Haz click para volver
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
