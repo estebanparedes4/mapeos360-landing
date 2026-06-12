@@ -1,6 +1,8 @@
 'use client'
 
 import { AnimatedCounter } from './AnimatedCounter'
+import TourPreview from './TourPreview'
+import BenefitsCarousel3D from './BenefitsCarousel3D'
 
 export default function Home() {
   const tours = [
