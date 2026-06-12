@@ -10,8 +10,16 @@ interface CounterProps {
 
 export function AnimatedCounter({ end, duration, suffix = '' }: CounterProps) {
   const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Trigger animation when component mounts
+    setIsVisible(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
     let startTime: number | null = null
     let animationFrameId: number
 
@@ -20,7 +28,7 @@ export function AnimatedCounter({ end, duration, suffix = '' }: CounterProps) {
       const elapsed = currentTime - startTime
       const progress = Math.min(elapsed / duration, 1)
 
-      // Easing function (ease-out)
+      // Easing function: cubic ease-out
       const easeProgress = 1 - Math.pow(1 - progress, 3)
       const current = Math.floor(easeProgress * end)
 
@@ -34,12 +42,12 @@ export function AnimatedCounter({ end, duration, suffix = '' }: CounterProps) {
     animationFrameId = requestAnimationFrame(animate)
 
     return () => cancelAnimationFrame(animationFrameId)
-  }, [end, duration])
+  }, [end, duration, isVisible])
 
   return (
-    <span>
+    <span className="inline-block min-w-max">
       {count.toLocaleString('es-CL')}
-      {suffix}
+      {suffix && <span className="ml-1">{suffix}</span>}
     </span>
   )
 }

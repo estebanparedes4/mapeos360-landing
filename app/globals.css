@@ -136,3 +136,35 @@ a {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 59, 122, 0.2);
 }
+
+/* Animación de números del contador */
+@keyframes counterPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes counterGlow {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 107, 53, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(255, 107, 53, 0);
+  }
+}
+
+.animate-counter {
+  animation: counterPulse 2.5s ease-out 1, counterGlow 2.5s ease-out 1;
+}
