@@ -326,6 +326,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Simuladores VR en Acción */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-otec-purple-dark to-otec-purple">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-4">Simuladores VR en Acción</h2>
+            <p className="text-xl text-gray-100 max-w-2xl mx-auto">
+              Mira cómo transformamos la capacitación en seguridad laboral con tecnología inmersiva
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Video 1: Incendios */}
+            <div className="bg-black rounded-2xl overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(57,255,20,0.4)] transition-shadow border-2 border-otec-lime">
+              <div className="aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/2183wiIs8bQ"
+                  title="Simulador Virtual de Incendios"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              <div className="p-6 bg-otec-purple-dark">
+                <h3 className="text-2xl font-bold text-white mb-2">🔥 Simulador de Incendios</h3>
+                <p className="text-gray-200">
+                  Entrena procedimientos de extinción en entornos virtuales seguros. Aprende a identificar tipos de fuego y usar correctamente los extintores.
+                </p>
+              </div>
+            </div>
+
+            {/* Video 2: Trabajo en Altura */}
+            <div className="bg-black rounded-2xl overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(57,255,20,0.4)] transition-shadow border-2 border-otec-lime">
+              <div className="aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/-HBeXSKb4mQ"
+                  title="Simulador Trabajo en Altura"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              <div className="p-6 bg-otec-purple-dark">
+                <h3 className="text-2xl font-bold text-white mb-2">⛰️ Simulador de Altura</h3>
+                <p className="text-gray-200">
+                  Practica trabajo en altura con sistemas de arnés y anclaje. Domina procedimientos críticos sin riesgos reales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Propuesta de Valor */}
+          <div className="mt-16 bg-otec-purple-dark rounded-2xl p-12 border-l-4 border-otec-lime">
+            <h3 className="text-3xl font-bold text-white mb-6">VR en tu empresa:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-5xl mb-4">🎯</div>
+                <h4 className="text-xl font-bold text-otec-lime mb-2">Más Práctica</h4>
+                <p className="text-gray-200">Entrena situaciones reales sin consecuencias</p>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl mb-4">🧠</div>
+                <h4 className="text-xl font-bold text-otec-lime mb-2">Más Conciencia</h4>
+                <p className="text-gray-200">Fortalece la cultura preventiva en equipos</p>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl mb-4">✅</div>
+                <h4 className="text-xl font-bold text-otec-lime mb-2">Menos Accidentes</h4>
+                <p className="text-gray-200">Reduce incidentes laborales significativamente</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pilares de OTEC con Iris */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-otec-light">
         <div className="max-w-7xl mx-auto">

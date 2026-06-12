@@ -27,6 +27,20 @@
   - `04-resultados.png`
   - `05-excelencia.png`
 
+### 4. Nueva Sección: Simuladores VR con Videos
+- ✅ Agregada sección **"Simuladores VR en Acción"** con videos de YouTube
+- ✅ 2 simuladores integrados:
+  - 🔥 **Simulador Virtual de Incendios** (https://www.youtube.com/watch?v=2183wiIs8bQ)
+    - 0:37 de duración
+    - Identificación y extinción de incendios
+    - Procedimientos de evacuación
+  - ⛏️ **Simulador Trabajo en Altura** (https://www.youtube.com/watch?v=-HBeXSKb4mQ)
+    - 0:46 de duración
+    - Práctica de anclajes y arneses
+    - Procedimientos de rescate
+- ✅ CTA para solicitar demostración
+- ✅ Link en navegación (nav + id="simuladores")
+
 ---
 
 ## 📝 PENDIENTE
@@ -37,12 +51,16 @@
 https://drive.google.com/drive/folders/1MvRi9M9wg1N2SBjaDiE7voSzk4d9EFvj?usp=drive_link
 
 # Iris recomendadas:
-- 01_Ensenanza.png     → experiencia
-- 03_Reflexion.png     → cercania
-- 09_Aprendizaje.png   → innovacion
-- 11_Excelencia.png    → excelencia
-- 13_Colaboracion.png  → resultados
+- 01_Ensenanza.png     → 01-experiencia.png
+- 03_Reflexion.png     → 02-cercania.png
+- 09_Aprendizaje.png   → 03-innovacion.png
+- 11_Excelencia.png    → 04-resultados.png (NOTA: aquí usamos 11_Excelencia para el pilar de excelencia)
+- 13_Colaboracion.png  → 05-excelencia.png (NOTA: aquí usamos 13_Colaboracion para resultados)
 ```
+
+**CORRECCIÓN**: 
+- Pilar "Excelencia" debería usar iris 11_Excelencia.png
+- Pilar "Resultados" debería usar iris 13_Colaboracion.png
 
 ### Pasos para completar:
 1. Descargar iris de Drive
@@ -61,6 +79,15 @@ b70b765..2c93620: feat: remove hotspot legend and disclaimer text
 
 # Commit 2: Sección iris
 2c93620..c450b40: feat: add pillars section with iris images placeholder
+
+# Commit 3: Documentación
+c450b40..923e89e: docs: add iris setup guide and session summary
+
+# Commit 4: Simuladores VR
+923e89e..77fbc4b: feat: add VR simulators section with YouTube videos
+
+# Commit 5: Navegación
+77fbc4b..2197b31: feat: add simulators link to navigation
 ```
 
 ---
@@ -69,10 +96,11 @@ b70b765..2c93620: feat: remove hotspot legend and disclaimer text
 
 | Sección | Estado | Notas |
 |---------|--------|-------|
-| Header | ✅ Completo | Navegación funcional |
+| Header | ✅ Completo | Navegación funcional + link Simuladores |
 | Hero | ✅ Completo | Stats y CTAs |
 | Tours 360° | ✅ Completo | 4 tours con videos demo |
 | **Pilares** | 🟡 En Progreso | Estructura lista, falta iris |
+| **Simuladores VR** | ✅ Completo | 2 videos YouTube incrustados |
 | Cursos VR | ✅ Completo | 5 cursos del PDF |
 | Beneficios | ✅ Completo | 6 beneficios |
 | Cómo Funciona | ✅ Completo | 4 pasos |
