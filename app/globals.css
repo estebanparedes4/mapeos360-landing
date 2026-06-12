@@ -2,17 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ACHS Nueva - Tipografía Oficial OTEC */
+/* ==================== TIPOGRAFÍA OFICIAL OTEC ==================== */
+
+/* ACHS Nueva SERIF - Para Títulos (H1, H2, H3, etc) */
 @font-face {
-  font-family: 'ACHS Nueva';
-  src: url('/fonts/achs-nueva-sans-vf.woff2') format('woff2-variations'),
-       url('/fonts/achs-nueva-sans-vf.woff') format('woff'),
-       url('/fonts/achs-nueva-serif-vf.woff2') format('woff2-variations'),
-       url('/fonts/achs-nueva-serif-vf.woff') format('woff');
+  font-family: 'ACHS Nueva Serif';
+  src: url('/fonts/ACHS_Nueva_Serif_VF.woff2') format('woff2-variations'),
+       url('/fonts/ACHS_Nueva_Serif_VF.woff') format('woff');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
+
+/* ACHS Nueva SANS - Para Body Text (Light 300) */
+@font-face {
+  font-family: 'ACHS Nueva Sans';
+  src: url('/fonts/ACHSNuevaSans-Light.woff2') format('woff2'),
+       url('/fonts/ACHSNuevaSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ACHS Nueva SANS - Regular (400) */
+@font-face {
+  font-family: 'ACHS Nueva Sans';
+  src: url('/fonts/ACHSNuevaSans-Regular.woff2') format('woff2'),
+       url('/fonts/ACHSNuevaSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ACHS Nueva SANS - Medium (500) */
+@font-face {
+  font-family: 'ACHS Nueva Sans';
+  src: url('/fonts/ACHSNuevaSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ACHS Nueva SANS - SemiBold (600) */
+@font-face {
+  font-family: 'ACHS Nueva Sans';
+  src: url('/fonts/ACHSNuevaSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================================== */
 
 * {
   margin: 0;
@@ -24,12 +64,55 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Body: SANS para texto corrido */
 body {
-  font-family: 'ACHS Nueva', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'ACHS Nueva Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Títulos: SERIF para máxima legibilidad */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'ACHS Nueva Serif', 'ACHS Nueva Sans', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Headlines específicas */
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+/* Párrafos y texto */
+p {
+  font-family: 'ACHS Nueva Sans';
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  font-family: 'ACHS Nueva Sans';
 }
 
 .glass-effect {
