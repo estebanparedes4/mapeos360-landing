@@ -278,7 +278,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-otec-dark mb-6 leading-tight">
-                Conoce tu lugar de trabajo <span className="gradient-text">antes de llegar</span>
+                [ACTUALIZADO] Mapeos 360° <span className="gradient-text">inmersivos</span>
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Experiencias inmersivas en 360° que transforman la capacitación en seguridad laboral. 
