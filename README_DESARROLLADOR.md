@@ -8,6 +8,13 @@ Landing page de captación de leads para el servicio **Mapeos 360°** de OTEC AC
 
 > ⚠️ **Este paquete es la versión más actualizada del código.** Si difiere de lo que hay en GitHub, este paquete manda. Primer paso recomendado: pushear este contenido al repo.
 
+## Cambios recientes (última sesión)
+
+- **Sección "Cómo Funciona" rediseñada:** tarjetas con badges numerados, íconos y flechas conectoras en desktop; timeline vertical con línea de gradiente en móvil.
+- **Menú móvil:** se agregó botón hamburguesa funcional (useState) — antes la navegación desaparecía en pantallas < md.
+- **Anchors con `scroll-mt-20`:** las secciones ya no quedan tapadas por el header fijo al navegar.
+- **Build independiente de la API key:** `new Resend(key || placeholder)` evita que falle el deploy si falta la variable (los emails igual requieren la key real en Vercel).
+
 ---
 
 ## 1. Levantar el proyecto en local

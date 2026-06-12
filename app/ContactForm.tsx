@@ -74,7 +74,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="formulario-contacto" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
+    <section id="formulario-contacto" className="scroll-mt-20 py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Lado izquierdo - Texto e imagen */}

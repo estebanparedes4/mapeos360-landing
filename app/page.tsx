@@ -1,11 +1,13 @@
 'use client'
 
+import { useState } from 'react'
 import { AnimatedCounter } from './AnimatedCounter'
 import TourPreview from './TourPreview'
 import BenefitsCarousel3D from './BenefitsCarousel3D'
 import ContactForm from './ContactForm'
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false)
   const tours = [
     {
       id: 1,
@@ -255,7 +257,7 @@ export default function Home() {
             <span className="hidden sm:inline text-xs sm:text-sm text-white font-semibold">Mapeos 360°</span>
           </div>
           
-          {/* Navigation */}
+          {/* Navigation desktop */}
           <nav className="hidden md:flex gap-4 lg:gap-8">
             <a href="#ejemplos" className="text-white hover:text-otec-orange transition font-medium text-sm lg:text-base">
               Ejemplos
@@ -270,7 +272,44 @@ export default function Home() {
               Contacto
             </a>
           </nav>
+
+          {/* Botón hamburguesa móvil */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 text-white"
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Menú desplegable móvil */}
+        {menuOpen && (
+          <nav className="md:hidden bg-otec-blue border-t border-white/20 px-4 pb-4 flex flex-col gap-1">
+            <a href="#ejemplos" onClick={() => setMenuOpen(false)} className="text-white hover:text-otec-orange transition font-medium py-3 border-b border-white/10">
+              Ejemplos
+            </a>
+            <a href="#cursos" onClick={() => setMenuOpen(false)} className="text-white hover:text-otec-orange transition font-medium py-3 border-b border-white/10">
+              Cursos VR
+            </a>
+            <a href="#beneficios" onClick={() => setMenuOpen(false)} className="text-white hover:text-otec-orange transition font-medium py-3 border-b border-white/10">
+              Beneficios
+            </a>
+            <a href="#formulario-contacto" onClick={() => setMenuOpen(false)} className="text-white hover:text-otec-orange transition font-medium py-3">
+              Contacto
+            </a>
+          </nav>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -319,7 +358,7 @@ export default function Home() {
       </section>
 
       {/* Ejemplos Vivos - Tours 360° con Videos Demo */}
-      <section id="ejemplos" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
+      <section id="ejemplos" className="scroll-mt-20 py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Experimenta Mapeos 360°</h2>
@@ -396,7 +435,7 @@ export default function Home() {
       </section>
 
       {/* Cursos VR */}
-      <section id="cursos" className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
+      <section id="cursos" className="scroll-mt-20 py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Soluciones VR & Realidad Aumentada</h2>
@@ -438,31 +477,68 @@ export default function Home() {
       </section>
 
       {/* Beneficios - Carrusel 3D Interactivo */}
-      <div id="beneficios"><BenefitsCarousel3D /></div>
+      <div id="beneficios" className="scroll-mt-20"><BenefitsCarousel3D /></div>
 
       {/* Cómo Funciona */}
-      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light">
+      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 bg-otec-light overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-14 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-otec-dark mb-3 sm:mb-4">Cómo Funciona</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Un proceso simple de 4 pasos: de la evaluación inicial a resultados medibles
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          {/* Desktop: flujo horizontal con flechas */}
+          <div className="hidden md:flex items-stretch">
             {[
-              { step: '1', title: 'Evaluación', desc: 'Identificamos necesidades de capacitación' },
-              { step: '2', title: 'Diseño', desc: 'Creamos experiencias personalizadas' },
-              { step: '3', title: 'Implementación', desc: 'Desplegamos en múltiples dispositivos' },
-              { step: '4', title: 'Medición', desc: 'Monitoreamos resultados en tiempo real' },
+              { step: '1', icon: '🔍', title: 'Evaluación', desc: 'Identificamos las necesidades de capacitación de tu equipo' },
+              { step: '2', icon: '🎨', title: 'Diseño', desc: 'Creamos experiencias 360° personalizadas para tu operación' },
+              { step: '3', icon: '🚀', title: 'Implementación', desc: 'Desplegamos en múltiples dispositivos, sin fricción' },
+              { step: '4', icon: '📊', title: 'Medición', desc: 'Monitoreamos resultados y avance en tiempo real' },
             ].map((item, idx) => (
-              <div key={idx} className="relative">
-                <div className="bg-gradient-to-br from-otec-blue to-otec-orange rounded-full w-14 sm:w-16 h-14 sm:h-16 flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4">
+              <div key={idx} className="flex items-center flex-1 min-w-0">
+                <div className="relative flex-1 h-full bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-otec-blue px-5 pt-10 pb-6 mt-7 text-center">
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-gradient-to-br from-otec-blue to-otec-orange text-white text-xl font-bold flex items-center justify-center shadow-lg ring-4 ring-otec-light">
+                    {item.step}
+                  </div>
+                  <div className="text-3xl mb-3">{item.icon}</div>
+                  <h3 className="text-lg lg:text-xl font-bold text-otec-dark mb-2">{item.title}</h3>
+                  <p className="text-sm lg:text-base text-gray-700 leading-relaxed">{item.desc}</p>
+                </div>
+                {idx < 3 && (
+                  <div className="shrink-0 px-1 lg:px-2 mt-7" aria-hidden="true">
+                    <svg className="w-7 h-7 lg:w-9 lg:h-9 text-otec-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5-5 5M6 7l5 5-5 5" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: timeline vertical */}
+          <div className="md:hidden">
+            {[
+              { step: '1', icon: '🔍', title: 'Evaluación', desc: 'Identificamos las necesidades de capacitación de tu equipo' },
+              { step: '2', icon: '🎨', title: 'Diseño', desc: 'Creamos experiencias 360° personalizadas para tu operación' },
+              { step: '3', icon: '🚀', title: 'Implementación', desc: 'Desplegamos en múltiples dispositivos, sin fricción' },
+              { step: '4', icon: '📊', title: 'Medición', desc: 'Monitoreamos resultados y avance en tiempo real' },
+            ].map((item, idx) => (
+              <div key={idx} className="relative flex gap-4 pb-8 last:pb-0">
+                {idx < 3 && (
+                  <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gradient-to-b from-otec-blue to-otec-orange opacity-40" aria-hidden="true"></div>
+                )}
+                <div className="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-otec-blue to-otec-orange text-white text-lg font-bold flex items-center justify-center shadow-lg z-10 ring-4 ring-otec-light">
                   {item.step}
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-otec-dark mb-2">{item.title}</h3>
-                <p className="text-sm sm:text-base text-gray-700">{item.desc}</p>
-                {idx < 3 && (
-                  <div className="hidden sm:block absolute top-6 sm:top-8 -right-3 sm:-right-4 text-2xl sm:text-3xl text-otec-orange opacity-30">→</div>
-                )}
+                <div className="flex-1 bg-white rounded-xl shadow-md p-4">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-2xl">{item.icon}</span>
+                    <h3 className="text-base font-bold text-otec-dark">{item.title}</h3>
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
