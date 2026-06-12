@@ -472,31 +472,6 @@ export default function Home() {
       {/* Formulario de Contacto */}
       <ContactForm />
 
-      {/* CTA Section */}
-      <section id="contacto" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-otec-blue to-otec-dark text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6">Transforma la capacitación en tu organización</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Contacta a OTEC ACHS Servicios y descubre cómo Mapeos 360° puede mejorar 
-            la seguridad y el aprendizaje en tu empresa.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:comercialotec@otecachsservicios.cl"
-              className="px-8 py-4 bg-white text-otec-blue font-bold rounded-lg hover:bg-otec-light hover:text-otec-dark transition"
-            >
-              📧 comercialotec@otecachsservicios.cl
-            </a>
-            <a
-              href="https://achsotec.cl"
-              className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-otec-blue transition"
-            >
-              🌐 achsotec.cl
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-otec-dark text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -510,8 +485,31 @@ export default function Home() {
             />
           </div>
 
+          {/* CTA Section in Footer */}
+          <div className="bg-gradient-to-r from-otec-blue/20 to-otec-orange/20 rounded-lg p-8 mb-8">
+            <h2 className="text-3xl font-bold mb-4 text-center">Transforma la capacitación en tu organización</h2>
+            <p className="text-lg mb-6 opacity-90 text-center">
+              Contacta a OTEC ACHS Servicios y descubre cómo Mapeos 360° puede mejorar 
+              la seguridad y el aprendizaje en tu empresa.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:comercialotec@otecachsservicios.cl"
+                className="px-8 py-3 bg-white text-otec-blue font-bold rounded-lg hover:bg-otec-light hover:text-otec-dark transition text-center"
+              >
+                📧 comercialotec@otecachsservicios.cl
+              </a>
+              <a
+                href="https://achsotec.cl"
+                className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-otec-blue transition text-center"
+              >
+                🌐 achsotec.cl
+              </a>
+            </div>
+          </div>
+
           {/* Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-t border-gray-700 pt-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Mapeos 360°</h3>
               <p className="text-gray-300 text-sm">
