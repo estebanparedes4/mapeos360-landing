@@ -271,8 +271,8 @@ export default function Home() {
           
           {/* CTA */}
           <div className="flex gap-3">
-            <a href="https://achsotec.cl" className="px-4 py-2 text-otec-blue font-semibold hover:text-otec-orange transition hidden sm:inline">
-              OTEC ACHS
+            <a href="https://achsotec.cl" className="px-4 py-2 bg-otec-blue text-white font-semibold hover:bg-otec-orange transition rounded-lg hidden sm:inline">
+              Acceder
             </a>
           </div>
         </div>
