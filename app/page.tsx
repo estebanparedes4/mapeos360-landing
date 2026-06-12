@@ -241,7 +241,7 @@ export default function Home() {
   return (
     <div className="w-full bg-white">
       {/* Header/Navegación */}
-      <header className="fixed top-0 w-full bg-white shadow-md z-50">
+      <header className="fixed top-0 w-full bg-otec-blue shadow-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
           {/* Logo OTEC */}
           <div className="flex items-center gap-2">
@@ -251,21 +251,21 @@ export default function Home() {
               className="h-12 w-auto"
               loading="eager"
             />
-            <span className="hidden sm:inline text-sm text-otec-dark font-semibold">Mapeos 360°</span>
+            <span className="hidden sm:inline text-sm text-white font-semibold">Mapeos 360°</span>
           </div>
           
           {/* Navigation */}
           <nav className="hidden md:flex gap-8">
-            <a href="#ejemplos" className="text-otec-dark hover:text-otec-orange transition font-medium">
+            <a href="#ejemplos" className="text-white hover:text-otec-orange transition font-medium">
               Ejemplos
             </a>
-            <a href="#cursos" className="text-otec-dark hover:text-otec-orange transition font-medium">
+            <a href="#cursos" className="text-white hover:text-otec-orange transition font-medium">
               Cursos VR
             </a>
-            <a href="#beneficios" className="text-otec-dark hover:text-otec-orange transition font-medium">
+            <a href="#beneficios" className="text-white hover:text-otec-orange transition font-medium">
               Beneficios
             </a>
-            <a href="#contacto" className="text-otec-dark hover:text-otec-orange transition font-medium">
+            <a href="#contacto" className="text-white hover:text-otec-orange transition font-medium">
               Contacto
             </a>
           </nav>
