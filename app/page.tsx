@@ -382,6 +382,96 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Simuladores VR - Videos */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-otec-dark mb-4">Simuladores VR en Acción</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Conoce nuestros simuladores de realidad virtual para capacitación inmersiva en seguridad
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Simulador Incendios */}
+            <div className="bg-gradient-to-br from-otec-light to-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+              <div className="aspect-video bg-otec-dark flex items-center justify-center">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/2183wiIs8bQ"
+                  title="Simulador Virtual de Incendios"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-4xl">🔥</span>
+                  <h3 className="text-2xl font-bold text-otec-dark">Simulador de Incendios</h3>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Entrena en la identificación y extinción de incendios en diferentes escenarios sin riesgos reales. 
+                  Aprende procedimientos de evacuación y manejo de extintores en entornos inmersivos.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p>✓ Simulación realista de diferentes tipos de fuego</p>
+                  <p>✓ Procedimientos de evacuación</p>
+                  <p>✓ Uso correcto de equipos de protección</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Simulador Altura */}
+            <div className="bg-gradient-to-br from-otec-light to-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+              <div className="aspect-video bg-otec-dark flex items-center justify-center">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/-HBeXSKb4mQ"
+                  title="Simulador Trabajo en Altura"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-4xl">⛏️</span>
+                  <h3 className="text-2xl font-bold text-otec-dark">Simulador Trabajo en Altura</h3>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  Prepara a tu equipo para trabajar en alturas con seguridad. Simula escenarios reales 
+                  donde se practican anclajes, uso de arnés y procedimientos de rescate.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p>✓ Practica de anclajes y arneses</p>
+                  <p>✓ Procedimientos de rescate</p>
+                  <p>✓ Identificación de puntos críticos de riesgo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 bg-gradient-to-r from-otec-blue to-otec-dark rounded-xl p-10 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">¿Quieres implementar simuladores VR en tu organización?</h3>
+            <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
+              Nuestros simuladores se adaptan a tus necesidades específicas de capacitación en seguridad
+            </p>
+            <a
+              href="mailto:comercialotec@otecachsservicios.cl"
+              className="inline-block px-8 py-4 bg-otec-orange text-white font-bold rounded-lg hover:bg-opacity-90 transition transform hover:scale-105"
+            >
+              Solicita una Demostración
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Cursos VR */}
       <section id="cursos" className="py-20 px-4 sm:px-6 lg:px-8 bg-otec-light">
         <div className="max-w-7xl mx-auto">
