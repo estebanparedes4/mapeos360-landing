@@ -248,6 +248,9 @@ export default function Home() {
             <a href="#ejemplos" className="text-otec-dark hover:text-otec-orange transition">
               Ejemplos
             </a>
+            <a href="#simuladores" className="text-otec-dark hover:text-otec-orange transition">
+              Simuladores
+            </a>
             <a href="#cursos" className="text-otec-dark hover:text-otec-orange transition">
               Cursos VR
             </a>
@@ -383,7 +386,7 @@ export default function Home() {
       </section>
 
       {/* Simuladores VR - Videos */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="simuladores" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-otec-dark mb-4">Simuladores VR en Acción</h2>
